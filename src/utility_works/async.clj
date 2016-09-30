@@ -14,7 +14,7 @@
                []))
       (a/alt!
         ch ([message]
-            (when message
+            (when-not (nil? message)
               (recur timeout-ch
                      (conj messages message))))
         timeout-ch (do

@@ -27,6 +27,9 @@ That will end up printing:
 [10]
 ```
 
+You may call `batch-process` with an optional 0-arity function which
+will be called when the channel has been closed and emptied.
+
 ## License
 
 Copyright © 2016 Democracy Works, Inc.

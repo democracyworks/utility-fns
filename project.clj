@@ -1,4 +1,4 @@
-(defproject democracyworks/utility-works "0.1.1-SNAPSHOT"
+(defproject democracyworks/utility-works "0.1.1"
   :description "Utility functions"
   :url "https://github.com/democracyworks/utility-works"
   :license {:name "Eclipse Public License"

@@ -3,7 +3,9 @@
 
 (defn batch-process
   "Take from ch and call f on a seq of messages every batch-size
-  messages or every timeout milliseconds, whichever comes first."
+  messages or every timeout milliseconds, whichever comes first. An
+  optional wrapup-f will be called after ch has been closed and
+  emptied."
   ([ch f batch-size timeout]
    (batch-process ch f batch-size timeout (constantly nil)))
   ([ch f batch-size timeout wrapup-f]

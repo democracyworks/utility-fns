@@ -20,7 +20,10 @@
        (a/alt!
          ch ([message]
              (if (nil? message)
-               (wrapup-f)
+               (do
+                 (when (seq messages)
+                   (f messages))
+                 (wrapup-f))
                (recur timeout-ch
                       (conj messages message))))
          timeout-ch (do

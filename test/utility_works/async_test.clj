@@ -25,7 +25,6 @@
       (a/onto-chan messages (range 10) false)
       (Thread/sleep 240)
       (a/>!! messages 10)
-      (Thread/sleep 120)
 
       (a/close! messages)
 
@@ -40,4 +39,4 @@
              @result))
 
       (testing "calls the wrapup-f afterwards"
-        (is (< 600 @timing))))))
+        (is (< 480 @timing))))))

@@ -12,7 +12,10 @@ provides a batch of the given size, or every time the timeout elapses,
 whichever comes first.
 
 ```clj
-(batch-process ch prn 4 1000)
+(batch-process ch prn
+               {:batch-size 4
+                :timeout 1000
+                :wrapup-f #(println "Done!")})
 (async/onto-chan ch (range 10) false)
 (Thread/sleep 2000)
 (async/>!! ch 10)
@@ -25,10 +28,21 @@ That will end up printing:
 [4 5 6 7]
 [8 9]
 [10]
+Done!
 ```
 
-You may call `batch-process` with an optional 0-arity function which
-will be called when the channel has been closed and emptied.
+The options `batch-process` takes are:
+
+* `:batch-size`: The number of messages required to trigger a call of
+  the processing function. Default: 100.
+* `:timeout`: The number of milliseconds to trigge a call of the
+  processing function even if the number of messages hasn't reached
+  the batch size. Default: 5000.
+* `:wrapup-f`: A 0-arity function to call once the channel is closed
+  and jobs have completed.
+* `:pool-size`: The number of threads to use for processing
+  messages. Work will block when all threads are occupied. If nil,
+  will use core.async's thread pool, which is unbounded. Default: nil.
 
 ## License
 

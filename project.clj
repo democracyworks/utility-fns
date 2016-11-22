@@ -1,4 +1,4 @@
-(defproject democracyworks/utility-fns "0.2.0-SNAPSHOT"
+(defproject democracyworks/utility-fns "0.2.0"
   :description "Clojure functions that are general-purpose enough to be useful elsewhere but haven't found a home in a nice library yet."
   :url "https://github.com/democracyworks/utility-fns"
   :license {:name "Eclipse Public License"

@@ -1,6 +1,6 @@
-(ns utility-works.async
+(ns utility-fns.async
   (:require [clojure.core.async :as a])
-  (:import [utility_works.async BoundedExecutor]
+  (:import [utility_fns.async BoundedExecutor]
            [java.util.concurrent TimeUnit]))
 
 (def batch-process-defaults

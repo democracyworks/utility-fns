@@ -1,4 +1,4 @@
-package utility_works.async;
+package utility_fns.async;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.Future;

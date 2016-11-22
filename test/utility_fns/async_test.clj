@@ -1,5 +1,5 @@
-(ns utility-works.async-test
-  (:require [utility-works.async :refer :all]
+(ns utility-fns.async-test
+  (:require [utility-fns.async :refer :all]
             [clojure.test :refer :all]
             [clojure.core.async :as a]))
 

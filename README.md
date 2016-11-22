@@ -1,6 +1,7 @@
-# utility-works
+# utility-fns
 
-A Clojure library of utility functions.
+Clojure functions that are general-purpose enough to be useful
+elsewhere but haven't found a home in a nice library yet.
 
 ## core.async
 
